@@ -20,7 +20,7 @@ pipeline {
                 container('liquibase'){
                     echo "Test Version"
                     sh 'liquibase --version'
-                    sh 'Test Version Completed'
+                    echo 'Test Version Completed'
                 }
             }
         }
