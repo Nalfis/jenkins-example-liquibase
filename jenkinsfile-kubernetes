@@ -19,7 +19,7 @@ pipeline {
             steps {
                 container('liquibase'){
                     echo "Test Version"
-                    sh 'liquibase --version'
+                    sh '''#!bin/bash liquibase --version'''
                     echo 'Test Version Completed'
                 }
             }
