@@ -6,7 +6,7 @@ pipeline {
               kind: Pod
               spec:
                 containers:
-                - name: liquibase
+                - name: 'liquibase'
                   image: liquibase/liquibase:latest-alpine
                   command:
                   - cat
