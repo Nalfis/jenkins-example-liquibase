@@ -19,6 +19,8 @@
         <column name="country_name" value="United States of America"/>
         <column name="capital" value="Washington DC"/>
         <column name="currency_code" value="Dollar"/>
+        <column name="continent_code" value="AMERICAS"/>
+        
       </insert>
 
     </changeSet>
