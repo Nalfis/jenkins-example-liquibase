@@ -13,13 +13,13 @@
     <changeSet author="Nalfis Tobar" id="sql-example">
       <comment>insert queries</comment>
       <insert tableName="countries">
-        <column name="iso" value="USA"/>
+        <column name="iso" value="US"/>
         <column name="iso3" value="USA"/>
         <column name="iso_numeric" value="01"/>
         <column name="country_name" value="United States of America"/>
         <column name="capital" value="Washington DC"/>
-        <column name="currency_code" value="Dollar"/>
-        <column name="continent_code" value="AMERICAS"/>
+        <column name="currency_code" value="USD"/>
+        <column name="continent_code" value="NA"/>
         
       </insert>
 
