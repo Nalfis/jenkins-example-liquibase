@@ -15,6 +15,7 @@
       <insert tableName="countries">
         <column name="iso" value="USA"/>
         <column name="iso3" value="USA"/>
+        <column name="iso_numeric" value="01"/>
         <column name="country_name" value="United States of America"/>
         <column name="capital" value="Washington DC"/>
         <column name="currency_code" value="Dollar"/>
