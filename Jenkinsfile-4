@@ -1,0 +1,30 @@
+pipeline {
+  agent {
+    docker { image 'liquibase/liquibase' }
+  }
+  environment {
+    MARIADB_CREDS=credentials('mariadb-credentials')
+  }
+  stages {
+    stage('Status --verbose') {
+      steps {
+        sh 'liquibase status --url="jdbc:mariadb://172.20.0.4:3306/my_app" --changeLogFile=my_app-wrapper.xml --username=$MARIADB_CREDS_USR --password=$MARIADB_CREDS_PSW' 
+      }
+    }
+    stage('Update') {
+      steps {
+        sh 'liquibase update --url="jdbc:mariadb://172.20.0.4:3306/my_app" --changeLogFile=my_app-wrapper.xml --username=$MARIADB_CREDS_USR --password=$MARIADB_CREDS_PSW'
+      }
+    }
+    stage('History') {
+      steps {
+        sh 'liquibase history --url="jdbc:mariadb://172.20.0.4:3306/my_app" --changeLogFile=my_app-wrapper.xml --username=$MARIADB_CREDS_USR --password=$MARIADB_CREDS_PSW'
+      }
+    }
+  }
+  post {
+    always {
+      cleanWs()
+    }
+  }
+}
